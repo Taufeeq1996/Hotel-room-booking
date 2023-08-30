@@ -1,7 +1,5 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
-# Create your models here.
-
 
 class Room(models.Model):
 
@@ -11,6 +9,8 @@ class Room(models.Model):
         ('twin', 'twin'),
         ('suite', 'suite')
     ]
+
+    room_number = models.IntegerField('room_number',blank=False, null=False, defaullt = 0)
 
     image = CloudinaryField('img', blank=False, null=False)
 
